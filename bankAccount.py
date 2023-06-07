@@ -2,7 +2,6 @@ class BankAccount:
     all_accounts = []
 
     # don't forget to add some default values for these parameters!
-
     def __init__(self, int_rate, balance=0):
         self.int_rate = int_rate
         self.balance = balance
@@ -35,6 +34,11 @@ class BankAccount:
         if self.balance > 0:
             self.balance = self.balance * (1 + self.int_rate / 100)
         return self
+class SavingsAccount(BankAccount):
+    def __init__(self, int_rate, is_roth, balance=0):
+        super().__init__(int_rate, balance)
+        self.is_roth = is_roth
+
 
 
 Andrew = BankAccount(0.5, 100)

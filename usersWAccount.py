@@ -8,6 +8,9 @@ class User:
         self.account = BankAccount(int_rate=0.02, balance=0)
 
     # other methods
+    @staticmethod
+    def account_type(type):
+        self.account = BankAccount(type)
 
     def make_deposit(self, amount):
         self.account.balance += amount
